@@ -7,7 +7,7 @@ import {BiSolidHomeHeart} from "react-icons/bi"
 import {BiSolidUser} from "react-icons/bi"
 import {FiMenu} from "react-icons/fi"
 
-import Logo from "./../../assets/imagenes/Logo.png"
+import Logo from "/images/Logo.png"
 
 const Navbar = () => {
   return (

@@ -1,6 +1,6 @@
 import React from "react"
 import { HeroContainerStyled, HeroImageContainerStyled, HeroTextContainerStyled } from "./HeroStyles";
-import portada from "../../assets/imagenes/portada.jpg"
+import portada from "/images/portada.jpg"
 import Button from "./UI/Button/Button";
 
 const Hero = () => {
@@ -17,7 +17,7 @@ const Hero = () => {
       </HeroTextContainerStyled>
 
       <HeroImageContainerStyled>
-        <img src="./../../src/assets/imagenes/portada.jpg" alt= "hero"/>
+        <img src="/images/portada.jpg" alt= "hero"/>
       </HeroImageContainerStyled>
         
     </HeroContainerStyled>

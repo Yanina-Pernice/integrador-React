@@ -22,14 +22,14 @@ const Footer = () => {
         <ContainerMediosDePagoStyled>
           <h3>MEDIOS DE PAGO</h3>
           <MediosDePagoStyled>
-            <img src= '../../src/assets/imagenes/MediosDePago/visa.png' alt="visa" width="65" height="40"/>
-            <img src= '../../src/assets/imagenes/MediosDePago/amex.png' alt="amex" width="65" height="40"/>
-            <img src= '../../src/assets/imagenes/MediosDePago/banelco.png' alt="banelco" width="65" height="40"/>  
-            <img src= '../../src/assets/imagenes/MediosDePago/mastercard.png' alt="mastercard" width="65" height="40"/>
-            <img src= '../../src/assets/imagenes/MediosDePago/rapipago.png' alt="rapipago" width="65" height="40"/>
-            <img src= '../../src/assets/imagenes/MediosDePago/pagofacil.png' alt="pago facil" width="65" height="40"/>
-            <img src= '../../src/assets/imagenes/MediosDePago/tarjeta-naranja.png' alt="naranja" width="65" height="40"/>
-            <img src= '../../src/assets/imagenes/MediosDePago/tarjeta-shopping.png' alt="shopping" width="65" height="40"/>         
+            <img src= '/images/MediosDePago/visa.png' alt="visa" width="65" height="40"/>
+            <img src= '/images/MediosDePago/amex.png' alt="amex" width="65" height="40"/>
+            <img src= '/images/MediosDePago/banelco.png' alt="banelco" width="65" height="40"/>  
+            <img src= '/images/MediosDePago/mastercard.png' alt="mastercard" width="65" height="40"/>
+            <img src= '/images/MediosDePago/rapipago.png' alt="rapipago" width="65" height="40"/>
+            <img src= '/images/MediosDePago/pagofacil.png' alt="pago facil" width="65" height="40"/>
+            <img src= '/images/MediosDePago/tarjeta-naranja.png' alt="naranja" width="65" height="40"/>
+            <img src= '/images/MediosDePago/tarjeta-shopping.png' alt="shopping" width="65" height="40"/>         
           </MediosDePagoStyled>
         </ContainerMediosDePagoStyled>
         

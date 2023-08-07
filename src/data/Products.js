@@ -3,7 +3,7 @@ export const products = [
     {
         id: 1,
         title: "Aros Cactus",
-        img: '../../src/assets/imagenes/Productos/aros_cactus.jpg',
+        cardImg: "/images/Productos/aros_cactus.jpg",
         price: 3000,
         category: "Aros",
         destacado: false,
@@ -11,7 +11,7 @@ export const products = [
     {
         id: 2,
         title: "Aros Avión",
-        img: '../../src/assets/imagenes/Productos/aros_avion.jpg',
+        cardImg: "/images/Productos/aros_avion.jpg",
         price: 3000,
         category: "Aros",
         destacado: false,
@@ -19,7 +19,7 @@ export const products = [
     {
         id: 3,
         title: "Aros Hojas",
-        img: '../../src/assets/imagenes/Productos/aros_hojas.jpg',
+        cardImg: "/images/Productos/aros_hojas.jpg",
         price: 3500,
         category: "Aros",
         destacado: false,
@@ -27,7 +27,7 @@ export const products = [
     {
         id: 4,
         title: "Aros Pacman",
-        img: '../../src/assets/imagenes/Productos/aros_pacman.jpg',
+        cardImg: "/images/Productos/aros_pacman.jpg",
         price: 4200,
         category: "Aros",
         destacado: false,
@@ -35,7 +35,7 @@ export const products = [
     {
         id: 5,
         title: "Aros Gamer",
-        img: '../../src/assets/imagenes/Productos/aros_gamer.jpg',
+        cardImg: "/images/Productos/aros_gamer.jpg",
         price: 4200,
         category: "Aros",
         destacado: false,
@@ -43,7 +43,7 @@ export const products = [
     {
         id: 6,
         title: "Aros Corazones",
-        img: '../../src/assets/imagenes/Productos/aros_corazon.jpg',
+        cardImg: "/images/Productos/aros_corazon.jpg",
         price: 3800,
         category: "Aros",
         destacado: false,
@@ -51,7 +51,7 @@ export const products = [
     {
         id: 7,
         title: "Aros Heart",
-        img: '../../src/assets/imagenes/Productos/aros_corazon_brillo.jpg',
+        cardImg: "/images/Productos/aros_corazon_brillo.jpg",
         price: 3800,
         category: "Aros",
         destacado: true,
@@ -59,7 +59,7 @@ export const products = [
     {
         id: 8,
         title: "Aros Heart's Queen",
-        img: '../../src/assets/imagenes/Productos/aros_heart.jpg',
+        cardImg: "/images/Productos/aros_heart.jpg",
         price: 3800,
         category: "Aros",
         destacado: false,
@@ -67,7 +67,7 @@ export const products = [
     {
         id: 9,
         title: "Aros Gatitos",
-        img: '../../src/assets/imagenes/Productos/aros_gatitos.jpg',
+        cardImg: "/images/Productos/aros_gatitos.jpg",
         price: 3200,
         category: "Aros",
         destacado: false,
@@ -75,7 +75,7 @@ export const products = [
     {
         id: 10,
         title: "Aros Osos",
-        img: '../../src/assets/imagenes/Productos/aros_osos.jpg',
+        cardImg: "/images/Productos/aros_osos.jpg",
         price: 4200,
         category: "Aros",
         destacado: false,
@@ -83,7 +83,7 @@ export const products = [
     {
         id: 11,
         title: "Aros Oso Pink",
-        img: '../../src/assets/imagenes/Productos/aros_osos_rosa.jpg',
+        cardImg: "/images/Productos/aros_osos_rosa.jpg",
         price: 4200,
         category: "Aros",
         destacado: false,
@@ -91,7 +91,7 @@ export const products = [
     {
         id: 12,
         title: "Collares de Plata",
-        img: '../../src/assets/imagenes/Productos/collares_brillos.jpg',
+        cardImg: "/images/Productos/collares_brillos.jpg",
         price: 5500,
         category: "Collares",
         destacado: false,
@@ -99,7 +99,7 @@ export const products = [
     {
         id: 13,
         title: "Choker",
-        img: '../../src/assets/imagenes/Productos/collares_choker.jpg',
+        cardImg: "/images/Productos/collares_choker.jpg",
         price: 4800,
         category: "Collares",
         destacado: false,
@@ -107,7 +107,7 @@ export const products = [
     {
         id: 14,
         title: "Collar Stars",
-        img: '../../src/assets/imagenes/Productos/collares_estrellas.jpg',
+        cardImg: "/images/Productos/collares_estrellas.jpg",
         price: 4800,
         category: "Collares",
         destacado: true,
@@ -115,7 +115,7 @@ export const products = [
     {
         id: 15,
         title: "Collar Spring Love",
-        img: '../../src/assets/imagenes/Productos/collares_corazon.jpg',
+        cardImg: "/images/Productos/collares_corazon.jpg",
         price: 3000,
         category: "Collares",
         destacado: false,
@@ -123,7 +123,7 @@ export const products = [
     {
         id: 16,
         title: "Set de collares",
-        img: '../../src/assets/imagenes/Productos/collares_heart.jpg',
+        cardImg: "/images/Productos/collares_heart.jpg",
         price: 5000,
         category: "Collares",
         destacado: false,
@@ -131,7 +131,7 @@ export const products = [
     {
         id: 17,
         title: "Collar Harry Potter",
-        img: '../../src/assets/imagenes/Productos/collares_hp.jpg',
+        cardImg: "/images/Productos/collares_hp.jpg",
         price: 5200,
         category: "Collares",
         destacado: false,
@@ -139,7 +139,7 @@ export const products = [
     {
         id: 18,
         title: "Collar de resina Osos",
-        img: '../../src/assets/imagenes/Productos/collares_osos.jpg',
+        cardImg: "/images/Productos/collares_osos.jpg",
         price: 3400,
         category: "Collares",
         destacado: false,
@@ -147,7 +147,7 @@ export const products = [
     {
         id: 19,
         title: "Dije El Principito",
-        img: '../../src/assets/imagenes/Productos/dije_principito.jpg',
+        cardImg: "/images/Productos/dije_principito.jpg",
         price: 3900,
         category: "Dijes",
         destacado: false,
@@ -155,7 +155,7 @@ export const products = [
     {
         id: 20,
         title: "Dije de resina Origami",
-        img: '../../src/assets/imagenes/Productos/dije_origami.jpg',
+        cardImg: "/images/Productos/dije_origami.jpg",
         price: 4100,
         category: "Dijes",
         destacado: true,
@@ -163,7 +163,7 @@ export const products = [
     {
         id: 21,
         title: "Dije Cactus",
-        img: '../../src/assets/imagenes/Productos/dije_Cactus.jpg',
+        cardImg: "/images/Productos/dije_Cactus.jpg",
         price: 3000,
         category: "Dijes",
         destacado: false,
@@ -171,7 +171,7 @@ export const products = [
     {
         id: 22,
         title: "Dije de cristal",
-        img: '../../src/assets/imagenes/Productos/dije_manos.jpg',
+        cardImg: "/images/Productos/dije_manos.jpg",
         price: 3500,
         category: "Dijes",
         destacado: false,
@@ -179,7 +179,7 @@ export const products = [
     {
         id: 23,
         title: "Llaveros Barbie",
-        img: '../../src/assets/imagenes/Productos/llaveros_barbie_nombre.jpg',
+        cardImg: "/images/Productos/llaveros_barbie_nombre.jpg",
         price: 3200,
         category: "Llaveros",
         destacado: false,
@@ -187,7 +187,7 @@ export const products = [
     {
         id: 24,
         title: "Llaveros Calavera",
-        img: '../../src/assets/imagenes/Productos/llaveros_calavera.jpg',
+        cardImg: "/images/Productos/llaveros_calavera.jpg",
         price: 2800,
         category: "Llaveros",
         destacado: false,
@@ -195,7 +195,7 @@ export const products = [
     {
         id: 25,
         title: "Llaveros Gatitos",
-        img: '../../src/assets/imagenes/Productos/llaveros_gatos.jpg',
+        cardImg: "/images/Productos/llaveros_gatos.jpg",
         price: 3200,
         category: "Llaveros",
         destacado: true,
@@ -203,7 +203,7 @@ export const products = [
     {
         id: 26,
         title: "Llaveros Huellas",
-        img: '../../src/assets/imagenes/Productos/llaveros_patitas.jpg',
+        cardImg: "/images/Productos/llaveros_patitas.jpg",
         price: 3500,
         category: "Llaveros",
         destacado: false,
@@ -211,7 +211,7 @@ export const products = [
     {
         id: 27,
         title: "Pulseras con frases",
-        img: '../../src/assets/imagenes/Productos/pulseras_frase.jpg',
+        cardImg: "/images/pulseras_frase.jpg",
         price: 4800,
         category: "Pulseras",
         destacado: false,
@@ -219,7 +219,7 @@ export const products = [
     {
         id: 28,
         title: "Pulsera Mamá",
-        img: '../../src/assets/imagenes/Productos/pulseras_mama.jpg',
+        cardImg: "/images/Productos/pulseras_mama.jpg",
         price: 4800,
         category: "Pulseras",
         destacado: false,
@@ -227,14 +227,14 @@ export const products = [
     {
         id: 29,
         title: "Pulseras acero quirúrgico",
-        img: '../../src/assets/imagenes/Productos/pulseras_acero.jpg',
+        cardImg: "/images/Productos/pulseras_acero.jpg",
         price: 5000,
         category: "Pulseras",
     },
     {
         id: 30,
         title: "Pulseras Stars",
-        img: '../../src/assets/imagenes/Productos/pulseras_estrellas.jpg',
+        cardImg: "/images/Productos/pulseras_estrellas.jpg",
         price: 5000,
         category: "Pulseras",
         destacado: false,
@@ -242,7 +242,7 @@ export const products = [
     {
         id: 31,
         title: "Pulseras Hearts",
-        img: '../../src/assets/imagenes/Productos/pulseras_heart.jpg',
+        cardImg: "/images/Productos/pulseras_heart.jpg",
         price: 5100,
         category: "Pulseras",
         destacado: false,
@@ -250,7 +250,7 @@ export const products = [
     {
         id: 32,
         title: "Pulsera Viajar",
-        img: '../../src/assets/imagenes/Productos/pulseras_viajar.jpg',
+        cardImg: "/images/Productos/pulseras_viajar.jpg",
         price: 5000,
         category: "Pulseras",
         destacado: false,
@@ -258,7 +258,7 @@ export const products = [
     {
         id: 33,
         title: "Pulseras Ositos",
-        img: '../../src/assets/imagenes/Productos/pulseras_osos.jpg',
+        cardImg: "/images/Productos/pulseras_osos.jpg",
         price: 3000,
         category: "Pulseras",
         destacado: false,
@@ -266,7 +266,7 @@ export const products = [
     {
         id: 34,
         title: "Set de pulsera y aros quirúrgico",
-        img: '../../src/assets/imagenes/Productos/pulseras_enlazada.jpg',
+        cardImg: "/images/Productos/pulseras_enlazada.jpg",
         price: 8000,
         category: "Pulseras",
         destacado: false,
@@ -274,7 +274,7 @@ export const products = [
     {
         id: 35,
         title: "Pulsera Reliquias Harry Potter",
-        img: '../../src/assets/imagenes/Productos/pulseras_hp.jpg',
+        cardImg: "/images/Productos/pulseras_hp.jpg",
         price: 6000,
         category: "Pulseras",
         destacado: false,
@@ -282,7 +282,7 @@ export const products = [
     {
         id: 36,
         title: "Set de Pulsera y aros Disney",
-        img: '../../src/assets/imagenes/Productos/pulseras_minnie.jpg',
+        cardImg: "/images/Productos/pulseras_minnie.jpg",
         price: 6600,
         category: "Pulseras",
         destacado: false,
@@ -290,7 +290,7 @@ export const products = [
     {
         id: 37,
         title: "Set Pulseras Barbie",
-        img: '../../src/assets/imagenes/Productos/pulseras_barbie_rosa.jpg',
+        cardImg: "/images/Productos/pulseras_barbie_rosa.jpg",
         price: 4500,
         category: "Pulseras",
         destacado: true,
@@ -298,7 +298,7 @@ export const products = [
     {
         id: 38,
         title: "Set Pulseras El Principito",
-        img: '../../src/assets/imagenes/Productos/pulseras_principito.jpg',
+        cardImg: "/images/Productos/pulseras_principito.jpg",
         price: 7500,
         category: "Pulseras",
         destacado: false,
@@ -306,7 +306,7 @@ export const products = [
     {
         id: 40,
         title: "Scrunchies varios satinadas",
-        img: '../../src/assets/imagenes/Productos/scrunchies_satinadas.jpg',
+        cardImg: "/images/Productos/scrunchies_satinadas.jpg",
         price: 3500,
         category: "Scrunchies",
         destacado: false,
@@ -314,7 +314,7 @@ export const products = [
     {
         id: 42,
         title: "Scrunchie Spring",
-        img: '../../src/assets/imagenes/Productos/scrunchies_spring.jpg',
+        cardImg: "/images/Productos/scrunchies_spring.jpg",
         price: 3000,
         category: "Scrunchies",
         destacado: true,
@@ -322,7 +322,7 @@ export const products = [
     {
         id: 43,
         title: "Scrunchie Margarita",
-        img: '../../src/assets/imagenes/Productos/scrunchies_flor.jpg',
+        cardImg: "/images/Productos/scrunchies_flor.jpg",
         price: 3000,
         category: "Scrunchies",
         destacado: false,
@@ -330,7 +330,7 @@ export const products = [
     {
         id: 44,
         title: "Scrunchies de Tela",
-        img: '../../src/assets/imagenes/Productos/scrunchies_tela.jpg',
+        cardImg: "/images/Productos/scrunchies_tela.jpg",
         price: 3500,
         category: "Scrunchies",
         destacado: false,
@@ -338,7 +338,7 @@ export const products = [
     {
         id: 45,
         title: "Pañuelos Varios modelos",
-        img: '../../src/assets/imagenes/Productos/pañuelos_1.jpg',
+        cardImg: "/images/Productos/pañuelos_1.jpg",
         price: 4000,
         category: "Pañuelos",
         destacado: false,
@@ -346,7 +346,7 @@ export const products = [
     {
         id: 46,
         title: "Pañuelos Varios modelos Pink",
-        img: '../../src/assets/imagenes/Productos/pañuelos_3.jpg',
+        cardImg: "/images/Productos/pañuelos_3.jpg",
         price: 4000,
         category: "Pañuelos",
         destacado: false,
