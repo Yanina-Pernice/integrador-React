@@ -8,7 +8,7 @@ export const BeneficiosWrapper = styled.section`
     margin-bottom: 3rem;
     h2{
         text-align: center;
-        color: #e9cccc;
+        color: #af3264;
     }
     @media (max-width: 768px) {
         padding-top: 30px;
@@ -39,16 +39,13 @@ export const CardBeneficios = styled.div`
     gap: 5px;
     background-color: #f8d8d6;
     border-radius: 15px;
-    color: #fff;
+    color: #7a6552;
 
     h3 {
         font-size: 1rem;
-        color: #fff;
+        color: #af3264;
         text-align: center;
     }
-    
-    p{
-
-    }
+  
 
 `;

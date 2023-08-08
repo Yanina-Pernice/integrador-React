@@ -13,7 +13,7 @@ export const NavbarContainerStyled = styled.header`
 
 //CONTENEDOR LINKS
 export const LinksContainerStyled = styled.div`
-    color: white;
+    color: #af3264;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,7 +36,7 @@ export const LinksContainerStyled = styled.div`
 //contenedor por un link componente base padre de otros mas chicos
 export const LinkContainerstyled = styled.div`
     font-size: 1.2rem;
-    color: ${(props) => (props.home ? "#e7c897" : "#957140")};
+    color: ${(props) => (props.home ? "#af3264" : "#e7c897")};
     display: flex;
     align-items: center;
 `
@@ -46,7 +46,7 @@ export const UserNavStyled = styled.div`
     gap: 15px;
     cursor: pointer;
     span {
-        color: white;
+        color: #af3264;
         font-size: 1rem;
         margin-right: 20px;
     }
@@ -57,14 +57,14 @@ export const UserNavStyled = styled.div`
 
 //CONTENEDOR USUARIO
 export const UserContainerStyled = styled(LinkContainerstyled)`
-    color: #FFFF;
+    color: #af3264;
 `;
 
 //CONTENEDOR HOME
 export const HomeContainerStyled = styled(LinkContainerstyled)`
     @media (max-width: 768px){
         display: none;
-        color: #FFFF;
+        color: #af3264;
     }
 `;
 

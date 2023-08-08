@@ -9,7 +9,7 @@ export const CategoriasWrapper = styled.section`
     justify-content: center;
     align-items: center;
     h2{
-        color: #e9cccc;
+        color: #af3264;
     }
     @media (max-width: 768px) {
         padding-top: 30px;
@@ -21,8 +21,7 @@ export const CategoriasContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: center
-    {/* gap: 20px; */}
+    align-items: center;
     user-select: none;// no te deja seleccionar la card
 `;
 
@@ -33,22 +32,15 @@ export const CardCategoria = styled(motion.div)`
     align-items: center;
     width: 150px;
     margin: 4px;
-    /* padding: 2 rem 0.5rem; */
     background-color: ${({selected}) => selected ? "#f6b7ac" : "#f8d8d6"};
     border-radius: 15px;
     cursor: pointer;
     h2 {
         font-size: 1rem;
         margin-bottom: 5px;
-        color: #fff;
+        color: #7a6552;
         text-align: center;
     }
-    // :first-child{
-    //     img {
-    //         padding-top: 7px;
-    //         padding-bottom: 7px;
-    //     }
-    // }
 
 `;
 

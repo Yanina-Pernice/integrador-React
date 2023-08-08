@@ -22,17 +22,14 @@ export const HeroTextContainerStyled = styled.div`
     justify-content: space-around;
     align-items: flex-start;
     width: 50%;
-    color: #e9cccc;
+    color: #af3264;
     h1{
         font-size: 4rem;
         margin: 10px 0;
     }
-    h2{
-        font-size: 2.5rem;
-        margin: 10px 0;
-    }
     p{
         font-size: 1.2rem;
+        color: #7a6552;
     }
     @media (max-width: 1000px){
         width: 80%;

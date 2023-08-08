@@ -7,7 +7,7 @@ export const FooterContainerStyled = styled.footer`
     justify-content: center;
     align-items: center;
     padding: 7rem 0 2rem 0;
-    color: #757575;
+    color: #af3264;
     background: #fbe8e5;
     p{
         text-align: center;

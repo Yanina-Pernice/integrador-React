@@ -10,7 +10,7 @@ export const ProductosWrapper = styled.section`
     margin: 3rem;
     h2{
         text-align: center;
-        color: #e9cccc;
+        color: #af3264;
     }
     @media (max-width: 768px) {
         text-align: center;
@@ -45,10 +45,10 @@ export const ProductosCard = styled.div`
     h2{
         font-weight: 600;
         margin: 0;
-        color:#fff;
+        color:#af3264;
     }
     p{
-        color:#fff;
+        color:#5f4444;
         font-size: 1.2rem;
     }
     @media (max-width: 768px) {
@@ -67,7 +67,7 @@ export const PriceContainer = styled.div`
 export const CardPrice = styled.span`
     font-weight: 800;
     font-size: 1.75rem;
-    color: #ef9a94;
+    color: #5f4444;
 `;
 
 //CONTENEDOR BOTON COMPRAR
@@ -76,4 +76,5 @@ export const ButtonContainerStyled = styled.div`
     justify-content: center;
     gap: 20px;
     margin-top: 3rem;
+    color: #af3264;
 `;
