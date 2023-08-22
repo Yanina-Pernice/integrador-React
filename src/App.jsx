@@ -1,25 +1,24 @@
-import Navbar from "./componentes/Navbar/Navbar"
-import Layout from "./componentes/Layaout/Layout"
-import Hero from "./componentes/Hero/Hero"
-import Beneficios from "./componentes/Beneficios/Beneficios"
-import Categorias from "./componentes/Categorias/Categorias"
-import CardsProductosDestacados from "./componentes/Productos/CardsProductosDestacados" 
-import Footer from "./componentes/Footer/Footer"
+import Routes from './routes/Routes'
+import Layout from "./componentes/Layaout/Layout";
+import Navbar from './componentes/Navbar/Navbar'
+
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
     <>
-      <Navbar/>
-      <Layout>
-        <Hero/>
-        <Beneficios/>
-        <Categorias/>
-        <CardsProductosDestacados/>
-      </Layout>
-      <Footer/>
-    </>   
-    
-  )
+      <BrowserRouter>
+
+        <Navbar/>
+        
+        <Layout>
+
+        </Layout>
+
+      </BrowserRouter>
+  
+    </>
+  );
 }
 
-export default App
+export default App;

@@ -1,11 +1,26 @@
 import React from 'react'
-import { LayoutWrapper } from './LayoutStyles'
+import { LayoutWrapper, ContainerRoutes } from './LayoutStyles'
+import Routes from '../../routes/Routes'
+import Footer from '../Footer/Footer'
 
-const Layout = ({children}) => {
+const Layout = () => {
   return (
-    <LayoutWrapper>
-        {children}
-    </LayoutWrapper>
+    <>
+
+      <LayoutWrapper>
+
+
+
+        <ContainerRoutes>
+          <Routes/>
+        </ContainerRoutes>
+        
+        <Footer/>
+        
+      </LayoutWrapper>
+      
+    </>
+
   )
 }
 

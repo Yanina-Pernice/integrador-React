@@ -1,62 +1,84 @@
-import React from 'react'
-import { HomeContainerStyled, LinkContainerstyled, LinksContainerStyled, MenuContainerStyled, NavbarContainerStyled, SpanStyled, UserContainerStyled, UserNavStyled } from './NavbarStyles'
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { MenuContexto } from "./Menu Context/MenuContext";
 
-import {motion} from "framer-motion"
+import {
+  NavbarWrapper,
+  LinksWrapperStyled,
+  PagesWrapper,
+  HomeContainerStyled,
+  LinkContainerStyled,
+  UserContainerStyled,
+  CartContainerStyled,
+  MenuContainerStyled,
+  NavLinkStyled,
+} from "./NavbarStyles";
 
-import {BiSolidHomeHeart} from "react-icons/bi"
-import {BiSolidUser} from "react-icons/bi"
-import {FiMenu} from "react-icons/fi"
+import { motion } from "framer-motion";
 
-import Logo from "/images/Logo.png"
+import { BiSolidHomeHeart, BiSolidUser } from "react-icons/bi";
+
+import { BsBagHeart } from "react-icons/bs";
+import { FiMenu } from "react-icons/fi";
 
 const Navbar = () => {
+
+  const { state, dispatch } = useContext(MenuContexto);
+
+  const sizeIcon = 25;
+
   return (
-    <NavbarContainerStyled>
-        <div>
-            <a href="/#">
-                <img src={Logo} alt= "logo" style={{ width: '90%', height: '90%' }} />
-            </a>
-        </div>
+    <NavbarWrapper>
+      <a>
+        <img
+          src="../../../public/images/Logo.png"
+          alt="Logo"
+          style={{ width: "90%", height: "90%" }}
+        />
+      </a>
 
-        <LinksContainerStyled>
-        
-            <HomeContainerStyled>
-                <motion.div whileTap={{scale: 0.95}}>
-                    <a href="/#"> 
-                        <LinkContainerstyled>
-                            <BiSolidHomeHeart/>
-                        </LinkContainerstyled>
-                        Home
-                    </a>  
-                </motion.div>
+      <LinksWrapperStyled>
+        <PagesWrapper className={state.isMenuOpen ? "open" : ""}>
+          <Link to="/about-us">Nosotros</Link>
+          <Link to="/productos">Productos</Link>
+          <Link to="/contacto">Contacto</Link>
+        </PagesWrapper>
 
-            </HomeContainerStyled>
+        <HomeContainerStyled>
+          <motion.div whileTap={{ scale: 0.95 }}>            
+            
+          <NavLinkStyled to="/">
+            <LinkContainerStyled>
+              <BiSolidHomeHeart
+                  style={{ color: "#a35a4f" }}
+                  size={sizeIcon}
+              />
+            </LinkContainerStyled>
+            HOME
+          </NavLinkStyled>
+            
+          </motion.div>
+        </HomeContainerStyled>
 
-            <UserNavStyled>
-                <UserContainerStyled>
-                    <SpanStyled>
-                        Inicia sesión
-                    </SpanStyled>
-                    
-                    <BiSolidUser/>
-                </UserContainerStyled>
-            </UserNavStyled>
+        <CartContainerStyled>
+          <BsBagHeart size={sizeIcon} />
+        </CartContainerStyled>
 
-            <motion.div whileTap={{scale: 0.95}}>                    
-                <MenuContainerStyled>
-                    <FiMenu/>
-                </MenuContainerStyled>
-            </motion.div>
+        <UserContainerStyled>
+          <BiSolidUser size={sizeIcon}/>
+        </UserContainerStyled>
 
+        <MenuContainerStyled>
+          <FiMenu
+            style={{ color: "#af3264" }}
+            onClick={() => dispatch({ type: "isMenuOpen" })}
+          
+          />
 
-        </LinksContainerStyled>
+        </MenuContainerStyled>
+      </LinksWrapperStyled>
+    </NavbarWrapper>
+  );
+};
 
-
-    </NavbarContainerStyled>
-  )
-
-
-
-}
-
-export default Navbar
+export default Navbar;

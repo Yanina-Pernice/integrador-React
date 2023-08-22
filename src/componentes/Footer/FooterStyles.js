@@ -6,7 +6,8 @@ export const FooterContainerStyled = styled.footer`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 7rem 0 2rem 0;
+    height: 20%;
+    width: 100%; 
     color: #af3264;
     background: #fbe8e5;
     p{
@@ -17,10 +18,6 @@ export const FooterContainerStyled = styled.footer`
         font-weight: 800;
     }
 
-    @media (min-width: 320px) {
-        padding: 5rem 2rem 0 2rem;
-
-    }
 `;
 
 //CONTENEDOR REDES Y MEDIOS DE PAGO
@@ -29,7 +26,6 @@ export const LinkFooterContainerStyled = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    width: fit-content;
     gap: 2rem;
     margin-bottom: 2rem;
     h3 {
