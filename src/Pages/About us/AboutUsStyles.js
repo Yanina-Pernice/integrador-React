@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import pattern_sprinkles from "../images/pattern_sprinkles.png"
+import pattern_sprinkles from "/../images/pattern_sprinkles.png"
 
 export const AboutUsWrapper = styled.main`
     width: 100%;
