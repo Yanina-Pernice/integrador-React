@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { MenuContexto } from "./Menu Context/MenuContext";
 
+import Logo from "./Logo.png"
+
 import {
   NavbarWrapper,
   LinksWrapperStyled,
@@ -31,7 +33,7 @@ const Navbar = () => {
     <NavbarWrapper>
       <a>
         <img
-          src="../../../public/images/Logo.png"
+          src={Logo}
           alt="Logo"
           style={{ width: "90%", height: "90%" }}
         />
