@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import pattern_sprinkles from "../images/pattern_sprinkles.png"
 
 export const ContactoContainer = styled.div`
     width: 100%;
@@ -8,7 +7,7 @@ export const ContactoContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url(${pattern_sprinkles});
+    background-image: url('../public/images/Backgrounds/pattern_sprinkles.png');
     background-repeat: repeat;
     background-size: contain;
     background-position: center;
