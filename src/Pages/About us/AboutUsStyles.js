@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import pattern_sprinkles from "../images/pattern_sprinkles.png"
 
 export const AboutUsWrapper = styled.main`
     width: 100%;
@@ -7,7 +8,7 @@ export const AboutUsWrapper = styled.main`
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background-image: url(../public/images/Backgrounds/pattern_sprinkles.png);
+    background-image: url(${pattern_sprinkles});
     background-repeat: repeat;
     background-size: contain;
     background-position: center;

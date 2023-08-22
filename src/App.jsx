@@ -1,4 +1,3 @@
-import Routes from './routes/Routes'
 import Layout from "./componentes/Layaout/Layout";
 import Navbar from './componentes/Navbar/Navbar'
 

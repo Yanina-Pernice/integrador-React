@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import portada from "../../images/portada.png"
 
 //CONTENEDOR SECCION
 export const HeroContainerStyled = styled.section`
@@ -9,6 +10,7 @@ export const HeroContainerStyled = styled.section`
     height: 85vh;
 
     background-image: url('../public/images/portada.png');
+    background-image: url(${portada});
     background-repeat: repeat;
     background-size: cover;
     background-position: center;
