@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import portada from "../../images/portada.png"
+import portada from "../../Images/portada.png"
 
 //CONTENEDOR SECCION
 export const HeroContainerStyled = styled.section`
