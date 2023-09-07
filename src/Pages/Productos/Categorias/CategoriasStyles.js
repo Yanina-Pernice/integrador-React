@@ -47,7 +47,7 @@ export const CardCategoria = styled(motion.div)`
 export const BorderDecoration = styled.div`
     height: 5px;
     width: 30%;
-    background: #e9b8a8;
+    background-color: ${({selected}) => selected ? "#ffff" : "#e9b8a8"};
     border-radius: 15px;
     margin-bottom: 10px;
 `;

@@ -350,10 +350,9 @@ export const products = [
         price: 4000,
         category: "Pañuelos",
         destacado: false,
-    },    
-  
-    
+    },       
 
     
 ]
-    
+
+export const TotalProducts = products.length;
