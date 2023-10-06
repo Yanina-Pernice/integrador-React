@@ -5,6 +5,7 @@ import AboutUs from '../Pages/About us/AboutUs';
 import Productos from '../Pages/Productos/Productos';
 import Contacto from '../Pages/Contacto/Contacto';
 import NotFound from '../Pages/Not Found/NotFound';
+import Login from '../Pages/Login/Login'
 
 function Routes () {
   return (
@@ -15,6 +16,8 @@ function Routes () {
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/productos" element={<Productos />} />
             <Route path="/contacto" element={<Contacto />} />
+
+            <Route path="/login" element={<Login />} />
         
             <Route path="*" element={<NotFound/>} />
 

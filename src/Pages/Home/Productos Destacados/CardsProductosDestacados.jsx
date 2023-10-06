@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   ButtonContainerStyled,
   ProductosContainer,
@@ -8,21 +9,22 @@ import {
 import CardProducto from "./CardProducto";
 import Button from "../../../componentes/Button/Button";
 import { Link } from "react-router-dom";
-
 import { useSelector } from "react-redux";
 
-const CardsProductosDestacados = () => {
-  const { recomendados } = useSelector((state) => state.recomendados);
 
-  console.log(recomendados);
+
+const CardsProductosDestacados = () => {
+    
+  const {recomendados} = useSelector((state) => state.recomendados)
 
   return (
     <ProductosWrapper>
       <h2>PRODUCTOS DESTACADOS</h2>
       <ProductosContainer>
        
-        {recomendados.map((recomendado) => {
-          return <CardProducto key={recomendado.id} {...recomendado} />;
+        {
+          recomendados?.map((recomendado) => {
+            return <CardProducto key={recomendado.id} {...recomendado} />;
           })
         }
 
@@ -30,7 +32,11 @@ const CardsProductosDestacados = () => {
 
       <ButtonContainerStyled>
         <Link to="/productos">
-          <Button>Ver todos</Button>
+          <Button
+                     
+          >
+            VER TODOS
+          </Button>
         </Link>
       </ButtonContainerStyled>
     </ProductosWrapper>

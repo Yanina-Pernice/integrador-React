@@ -5,7 +5,7 @@ export const BeneficiosWrapper = styled.section`
     display: flex;
     flex-direction: column;
     /* max-width: 1300px; */
-    margin-bottom: 3rem;
+    margin-top: 3rem;
     h2{
         text-align: center;
         color: #af3264;

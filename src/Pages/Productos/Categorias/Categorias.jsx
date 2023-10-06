@@ -10,8 +10,6 @@ const Categorias = () => {
     
     const {categorias} = useSelector((state) => state.categorias)
 
-    // console.log(categorias)
-    
     return (
         <CategoriasWrapper>
                 <h2>CATEGORIAS</h2>

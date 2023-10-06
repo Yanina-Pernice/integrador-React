@@ -1,29 +1,82 @@
 import React from 'react'
 import { ContactoContainer, FormContacto } from './ContactoStyles'
-import Button from '../../componentes/Button/Button'
+
+import Input from '../../componentes/FormUI/input/Input'
+import SubmitButton from '../../componentes/FormUI/submit/SubmitButton'
+import TextArea from '../../componentes/FormUI/textArea/TextAreaInput'
+
+import { Formik } from 'formik'
+import { contactoValidationSchema } from '../../Formik/validationSchema'
+import { contactoInitialValues } from '../../Formik/initialValues'
 
 const Contacto = () => {
+
   return (
 
     <ContactoContainer>
-
       <h2>CONTACTO</h2>
 
-      <FormContacto>
+      <Formik
+        initialValues={(contactoInitialValues)}
+        validationSchema={contactoValidationSchema}
+        onSubmit={ (values, {resetForm}) => {
+          resetForm();
+        }}
+      >
 
-        <input type='text' name='nombre' placeholder='Nombre' id='name'/>
+        {
+          ({touched, errors})=> (
+          
+          <FormContacto>
 
-        <input type='text' name='apellido' placeholder='Apellido' id='apellido'/>
+            <Input 
+              type='text' 
+              name='nombre' 
+              placeholder='Nombre' 
+              id='name'
+              className={errors.nombre && touched.nombre? 'error' : ''}
+            />
 
-        <input type='email' name='email' placeholder='email' id='email'/>
+            <Input 
+              type='text' 
+              name='apellido' 
+              placeholder='Apellido' 
+              id='apellido'
+              className={errors.apellido && touched.apellido? 'error' : ''}
+            />
 
-        <input type='text' name='asunto' placeholder='Asunto' id='asunto'/>
+            <Input 
+              type='email' 
+              name='email' 
+              placeholder='email' 
+              id='email'
+              className={errors.email && touched.email? 'error' : ''}
+            />
 
-        <textarea type='text' name='mensaje' placeholder='Mensaje' id='msj'/>
+            <Input
+              type='text' 
+              name='asunto' 
+              placeholder='Asunto' 
+              id='asunto'
+              className={errors.asunto && touched.asunto? 'error' : ''}
+            />
 
-        <Button radius= '15'>Enviar</Button>
+            <TextArea
+              type='text' 
+              name='mensaje' 
+              placeholder='Mensaje' 
+              id='msj'
+              className={errors.mensaje && touched.mensaje? 'error' : ''}
+            />
 
-      </FormContacto>
+            <SubmitButton/>
+
+          </FormContacto>)
+        }
+
+        
+      </Formik>
+     
 
     </ContactoContainer>  
 

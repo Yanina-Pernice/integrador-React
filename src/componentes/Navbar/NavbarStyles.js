@@ -37,7 +37,7 @@ export const LinksWrapperStyled = styled.nav`
 export const LinkContainerStyled = styled.div`
     font-size: 1rem;
     font-weight: bolder;
-    color: ${(props) => (props.home ? "#e61ebd" : "#af3264")};
+    color: ${(props) => (props.home ? "#e61ebd" : "#ea8a8a")};
     display: flex;
     align-items: center;
 `
@@ -146,7 +146,7 @@ export const NosotrosContainerStyled = styled(LinkContainerStyled)`
 
 //NAVLINK PRODUCTOS NOSOTROS Y CONTACTO
 export const NavLinkStyled = styled(NavLink)`
-  color: #e61ebd;
+  color: #ea8a8a;
   &.active {
     color: #af3264;
   }
@@ -158,7 +158,33 @@ export const CartContainerStyled = styled.div`
     gap: 15px;
     cursor: pointer;
 
- 
+    &:hover {
+        color: #f9a1bc;
+    }    
 
 `;
+
+export const CartBubble = styled.div`
+    position: relative;
+    cursor: pointer;
+    padding-right: 10px;
+
+    span {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 17px;
+        width: 17px;
+        text-align: center;
+        border: 1px solid white;
+        border-radius: 1rem;
+        color: white;
+        background-color: #f9a1bc;
+        font-size: 12px;
+        font-family: 'Montserrat', sans-serif;
+    }
+`;
+
+
+
 

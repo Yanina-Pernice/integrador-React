@@ -45,7 +45,10 @@ export const ProductosCard = styled.div`
     h2{
         font-weight: 600;
         margin: 0;
-        color:#af3264;
+        background: linear-gradient(95deg, #af3264, #ff4a92);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
     p{
         color:#5f4444;
@@ -67,7 +70,10 @@ export const PriceContainer = styled.div`
 export const CardPrice = styled.span`
     font-weight: 800;
     font-size: 1.75rem;
-    color: #5f4444;
+    background: linear-gradient(95deg, #af3264, #ff4a92);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 `;
 
 //CONTENEDOR BOTON COMPRAR
@@ -78,3 +84,35 @@ export const ButtonContainerStyled = styled.div`
     margin-top: 3rem;
     color: #af3264;
 `;
+
+//MODAL
+
+export const ModalContainer = styled.div`
+    position: fixed;
+    bottom: 20px;
+    left: 30px;
+    background-color: #eaf6f6; 
+    padding: 9px;
+    border: 1px solid #ccc;
+    height: 4rem;
+    border-radius: 5px;
+
+    @media (min-width: 320px) {
+        left: 50px;
+    }
+`
+
+export const ModalContent = styled.div`
+    height: 4rem;
+    display: flex;
+    flex-direction: column;
+    
+    & p {
+        color: #0881a3;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 0 10px;
+    }
+
+
+`

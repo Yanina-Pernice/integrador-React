@@ -6,12 +6,18 @@ import storage from "redux-persist/lib/storage";
 import categoriasReducer from "./categorias/categoriasSlice"
 import productosReducer from "./productos/productosSlice"
 import recomendadosReducer from "./recomendados/recomendadosSlice"
+import cartReducer from "./cart/cartSlice"
+import modalReducer from "./modal/modalSlice"
+import userReducer from "./user/userSlice"
 
 
 const reducers = combineReducers({
     categorias: categoriasReducer,
     productos: productosReducer,
-    recomendados: recomendadosReducer    
+    recomendados: recomendadosReducer,
+    cart: cartReducer,   
+    modal: modalReducer,
+    user: userReducer,
 });
 
 
@@ -20,7 +26,7 @@ const reducers = combineReducers({
 const persistConfig = {
     key: "root",
     storage,
-    whiteList: []
+    whitelist: ["cart", "user"]
 }
 
 // data que quiero persista en el LS

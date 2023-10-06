@@ -1,6 +1,9 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { MenuContexto } from "./Menu Context/MenuContext";
+import Cart from "./Cart/Cart"
+
+import Carrito from  "../Navbar/Modal Cart/Carrito"
 
 import Logo from "./Logo.png"
 
@@ -11,22 +14,20 @@ import {
   HomeContainerStyled,
   LinkContainerStyled,
   UserContainerStyled,
-  CartContainerStyled,
   MenuContainerStyled,
   NavLinkStyled,
+  CartBubble
 } from "./NavbarStyles";
 
 import { motion } from "framer-motion";
 
 import { BiSolidHomeHeart, BiSolidUser } from "react-icons/bi";
-
-import { BsBagHeart } from "react-icons/bs";
 import { FiMenu } from "react-icons/fi";
+import ModalCardCarrito from "./Modal Cart/ModalCardCarrito";
 
 const Navbar = () => {
 
   const { state, dispatch } = useContext(MenuContexto);
-
   const sizeIcon = 25;
 
   return (
@@ -41,9 +42,9 @@ const Navbar = () => {
 
       <LinksWrapperStyled>
         <PagesWrapper className={state.isMenuOpen ? "open" : ""}>
-          <Link to="/about-us">Nosotros</Link>
-          <Link to="/productos">Productos</Link>
-          <Link to="/contacto">Contacto</Link>
+          <Link to="/about-us">NOSOTROS</Link>
+          <Link to="/productos">PRODUCTOS</Link>
+          <Link to="/contacto">CONTACTO</Link>
         </PagesWrapper>
 
         <HomeContainerStyled>
@@ -62,9 +63,15 @@ const Navbar = () => {
           </motion.div>
         </HomeContainerStyled>
 
-        <CartContainerStyled>
-          <BsBagHeart size={sizeIcon} />
-        </CartContainerStyled>
+        <CartBubble>
+          <Cart/>
+        </CartBubble>
+
+        <Carrito>
+          <ModalCardCarrito/>
+        </Carrito> 
+
+
 
         <UserContainerStyled>
           <BiSolidUser size={sizeIcon}/>

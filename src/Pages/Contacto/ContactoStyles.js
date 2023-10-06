@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import pattern_sprinkles from '../Images/pattern_sprinkles.png'
+import {Form as FormikForm} from 'formik';
 
 export const ContactoContainer = styled.div`
     width: 100%;
@@ -20,42 +21,24 @@ export const ContactoContainer = styled.div`
 
 `
 
-export const FormContacto = styled.form`
+export const FormContacto = styled(FormikForm)`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 30px;
     width: 320px;
-    gap: 20px;
-    border: 1px solid grey;
     border-radius: 8px;
-    -webkit-box-shadow: 10px 10px 25px 7px rgba(235,223,235,1);
-    -moz-box-shadow: 10px 10px 25px 7px rgba(235,223,235,1);
-    box-shadow: 10px 10px 25px 7px rgba(235,223,235,1);
+    -webkit-box-shadow: 13px 6px 40px 6px rgba(251,232,229,1);
+    -moz-box-shadow: 13px 6px 40px 6px rgba(251,232,229,1);
+    box-shadow: 13px 6px 40px 6px rgba(251,232,229,1);
 
-    & input {
+
+    @media (min-width: 320px) {
         padding: 10px;
-        width: 250px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 14px;
-        font-family: 'Montserrat', sans-serif; 
-          
+        width: 270px;
     }
-
-    & textarea {
-        width: 250px;
-        height: 80px;
-        padding: 10px;
-        margin-bottom: 15px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-family: 'Montserrat', sans-serif;
-
-    } 
-
-    
+  
 ` 
     
    

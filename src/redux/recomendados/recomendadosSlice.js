@@ -1,23 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { destacadosDelDia } from "../../utils/destacadosDelDia";
+import { seleccionarProductosRandom } from "./recomendadosUtils";
 
 const INITIAL_STATE = {
-    recomendados: destacadosDelDia(6)    
+    recomendados: seleccionarProductosRandom(6),
+        
 }
-
-console.log(INITIAL_STATE)
 
 export const recomendadosSlice = createSlice({
     name: "recomendados",
     initialState: INITIAL_STATE,
     reducers: {
-        recomendadosRandom: (state) => {
+        productosRecomendados: (state) => {
             return state
+            
         }
     }
 
 })
 
-export const { recomendadosRandom } = recomendadosSlice.actions;
+export const { productosRecomendados } = recomendadosSlice.actions;
 
 export default recomendadosSlice.reducer

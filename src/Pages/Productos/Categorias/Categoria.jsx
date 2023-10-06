@@ -12,8 +12,9 @@ const Categoria = ({ title, category }) => {
   return (
     <CardCategoria 
       selected={category === categoriaSeleccionada}
-      onClick={ () => dispatch(selectCategory(category))}
-      whileTap={{scale: 0.95}}>
+      onClick={() => dispatch(selectCategory(category))}
+      whileHover={{scale: 0.95}}
+    >
         <h2>{title}</h2>
         <span/>
         <BorderDecoration
