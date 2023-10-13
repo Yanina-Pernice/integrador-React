@@ -12,7 +12,8 @@ const Input = ({ type, placeholder, name, isError }) => {
         placeholder={placeholder}
         error = {isError}  
         as={InputStyled}            
-        className={isError ? "error" : ""}           
+        className={isError ? "error" : ""} 
+      
       />
 
       <ErrorMessage name={name} component={ErrorMsjStyled} />      

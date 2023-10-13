@@ -4,7 +4,7 @@ import {Form as FormikForm} from 'formik';
 
 export const ContactoContainer = styled.div`
     width: 100%;
-    height: 90vh;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,9 +15,17 @@ export const ContactoContainer = styled.div`
     background-position: center;
     
     h2{
-        color: #EF8275;
+        background: linear-gradient(95deg, #af3264, #ff4a92);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         text-shadow: 4px 4px 2px rgba(187,171,139,0.25);
-    }       
+    }  
+    
+    @media (max-width: 768px) {
+        padding: 1 rem;
+
+    }
 
 `
 
@@ -29,14 +37,19 @@ export const FormContacto = styled(FormikForm)`
     padding: 30px;
     width: 320px;
     border-radius: 8px;
-    -webkit-box-shadow: 13px 6px 40px 6px rgba(251,232,229,1);
-    -moz-box-shadow: 13px 6px 40px 6px rgba(251,232,229,1);
-    box-shadow: 13px 6px 40px 6px rgba(251,232,229,1);
+    box-shadow: 1px 3px 148px 15px rgba(255,204,227,0.77);
+    -webkit-box-shadow: 1px 3px 148px 15px rgba(255,204,227,0.77);
+    -moz-box-shadow: 1px 3px 148px 15px rgba(255,204,227,0.77);
 
+    @media (max-width: 768) {
+        width:90%;
+
+    }
 
     @media (min-width: 320px) {
         padding: 10px;
-        width: 270px;
+        margin-bottom: 60px;
+        width: fit-content;
     }
   
 ` 

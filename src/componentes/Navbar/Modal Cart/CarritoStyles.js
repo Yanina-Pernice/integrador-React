@@ -16,7 +16,7 @@ export const CarritoWrapperStyled = styled(motion.div)`
   background-color: #ffff;
   border-radius: 0 0 0 1rem;
   box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.3);
-  z-index: 50;
+  z-index: 100;
 
 
   @media (min-width: 320px) and (max-width: 500px) {
@@ -84,8 +84,6 @@ export const ProductosWrapperStyled = styled.div`
   min-height: 320px;
   margin: 0 auto;
   padding-top: 1rem;
-
-
   overflow: scroll;
 
   &::-webkit-scrollbar {
@@ -94,6 +92,10 @@ export const ProductosWrapperStyled = styled.div`
 
   &::-webkit-scrollbar:horizontal {
     display: none;
+  }
+
+  & p{
+    text-align: center;
   }
 
   @media (max-height: 800px) {
@@ -121,6 +123,11 @@ export const TotalStyled = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  margin: 2px;
+
+  & p {
+    padding-left: .5rem;
+  }
 
   & span{
     width: 100%;
@@ -135,14 +142,10 @@ export const TotalStyled = styled.div`
 export const ContainerBotonesStyled = styled.div`
   display: flex;
   justify-content: center;
-  gap: 50px;
+  align-items: center;
+  gap: 5px;
 
-  @media (min-width: 320px)  {
-    justify-content: center;
-    gap: 5px;
-  }
 `;
-
 
 // MODAL CARD CARRITO
 export const ContainerProductosStyled = styled.div`
@@ -214,15 +217,17 @@ export const ContainerCantidadStyled = styled.div`
 
 `;
 
-// OverlayStyled
+// OVERLAY
 
 export const OverlayStyled = styled(motion.div)`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 50;
-  width: calc(100vw - 450px);
+  z-index: 99;
   height: 100vh;
-
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5); // Fondo semitransparente
+  backdrop-filter: blur(5px); 
+  pointer-events: none;
 
 `;

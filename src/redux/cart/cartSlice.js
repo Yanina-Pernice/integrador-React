@@ -27,7 +27,7 @@ const cartSlice = createSlice ({
             return {
                 ...state,
                 itemsCarrito: removerItemDeCarrito(state.itemsCarrito, action.payload),
-                //costoEnvio: resetCostoEnvio(state.itemsCarrito, COSTO_ENVIO),
+                costoEnvio: resetCostoEnvio(state.itemsCarrito, COSTO_ENVIO),
             }
         },
 

@@ -8,6 +8,7 @@ import productosReducer from "./productos/productosSlice"
 import recomendadosReducer from "./recomendados/recomendadosSlice"
 import cartReducer from "./cart/cartSlice"
 import modalReducer from "./modal/modalSlice"
+import menuReducer from "./menu/menuSlice"
 import userReducer from "./user/userSlice"
 
 
@@ -17,6 +18,7 @@ const reducers = combineReducers({
     recomendados: recomendadosReducer,
     cart: cartReducer,   
     modal: modalReducer,
+    menu: menuReducer,
     user: userReducer,
 });
 

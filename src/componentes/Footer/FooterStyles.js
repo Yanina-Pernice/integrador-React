@@ -10,12 +10,24 @@ export const FooterContainerStyled = styled.footer`
     width: 100%; 
     color: #af3264;
     background: #fbe8e5;
-    p{
+    padding: 1rem 1 rem 0 1 rem;
+
+    .footer_text {
+        display: flex;
+        flex-direction: column;
         text-align: center;
-        font-size: 12px;
+        font-size: 14px;
+
+        span {
+            font-weight: 800;
+        }
     }
-    p span {
-        font-weight: 800;
+
+    @media (min-width: 320px) {
+        .footer_text {
+            padding: 1rem;
+        }
+
     }
 
 `;
@@ -25,17 +37,21 @@ export const LinkFooterContainerStyled = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
-    gap: 2rem;
-    margin-bottom: 2rem;
+    //align-items: flex-start;
+    gap: .5rem;
     h3 {
         text-align: center;
+        background: linear-gradient(95deg, #af3264, #ff4a92);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
     @media (max-width: 768px) {
         flex-direction: column;
     }
     @media (min-width: 320px) {
         align-items: center;
+        padding: 1rem;
     }
 
 `;
@@ -47,7 +63,7 @@ export const ContainerRedesSocialesStyled = styled.div`
     justify-content: center;
     align-items: center;
     width: fit-content;
-
+    
 `;
 //CONTENEDOR ICONOS REDES SOCIALES
 export const IconosRedesSocialesStyled = styled.div`
@@ -56,6 +72,7 @@ export const IconosRedesSocialesStyled = styled.div`
     justify-content: center;
     width: fit-content;
     font-size: 30px;
+    
 `;
 
 //CONTENEDOR MEDIOS DE PAGO
@@ -76,5 +93,9 @@ export const MediosDePagoStyled = styled.div`
     justify-content: center;
     width: fit-content;
     gap: 10px;
+
+    @media (min-width: 320px) {
+        gap: 6px;
+    }
 `;
 

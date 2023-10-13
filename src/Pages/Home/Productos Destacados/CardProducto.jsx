@@ -7,17 +7,17 @@ import {
   ProductosCard,
 } from "./CardsProductosStyles";
 import Button from "../../../componentes/Button/Button";
-import { RxCrossCircled } from "react-icons/rx"
 
 import { useDispatch, useSelector } from "react-redux";
 import { agregarProducto } from "../../../redux/cart/cartSlice";
-import { openModal, closeModal } from "../../../redux/modal/modalSlice";
+import { toggleModal } from "../../../redux/modal/modalSlice";
 
 
 const CardProducto = ({ cardImg, title, desc, price, id }) => {
   const dispatch = useDispatch();
+
   const [ agregandoAlCarrito, setAgregandoAlCarrito ] = useState(false);
-  const isModalOpen = useSelector((state) => state.modal.isOpen)
+  const { isOpen } = useSelector((state) => state.modal)
 
   const handleAgregandoAlCarrito = () => {
     if(!agregandoAlCarrito) {
@@ -29,24 +29,24 @@ const CardProducto = ({ cardImg, title, desc, price, id }) => {
 
       dispatch(agregarProducto({ cardImg, title, desc, price, id }));
 
-      dispatch(openModal());
+      dispatch(toggleModal());
     }, 1000);
     
   }
 
   const handleCloseModal = () => {
-    dispatch(closeModal());
+    dispatch(toggleModal());
   }
 
   useEffect(() => {
-    if(isModalOpen) {
+    if(isOpen) {
       const modalTimer = setTimeout(() => {
         handleCloseModal();
-      }, 3000);
+      }, 2000);
         
       return () => clearTimeout(modalTimer);
     }
-  }, [isModalOpen])
+  }, [isOpen])
 
   return (
     <ProductosCard>
@@ -66,10 +66,9 @@ const CardProducto = ({ cardImg, title, desc, price, id }) => {
       </PriceContainer>
 
       {/* MODAL */}
-      {isModalOpen && (
+      {isOpen && (
         <ModalContainer>
-          <ModalContent>
-            <RxCrossCircled onClick={handleCloseModal}/> 
+          <ModalContent>            
             <p>Item agregado al carrito!</p>
           </ModalContent>
         </ModalContainer>

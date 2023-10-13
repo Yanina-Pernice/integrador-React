@@ -1,56 +1,84 @@
-import React from 'react'
+import React, { useState } from "react";
 import { LiaPlusSquareSolid } from "react-icons/lia";
 import { LiaMinusSquareSolid } from "react-icons/lia";
 
 import Counter from "../../UI/Counter/Counter";
-import Increase  from '../../UI/Increase/Increase';
+import Increase from "../../UI/Increase/Increase";
 
 import { useDispatch } from "react-redux";
-import { agregarProducto, removerProducto } from "../../../redux/cart/cartSlice";
+import {
+  agregarProducto,
+  removerProducto,
+} from "../../../redux/cart/cartSlice";
 import { GoTrash } from "react-icons/go";
-import { ContainerCantidadStyled, ContainerProductosStyled, PrecioStyled, TextoContainerStyled, TituloCardStyled } from './CarritoStyles';
+import {
+  ContainerCantidadStyled,
+  ContainerProductosStyled,
+  PrecioStyled,
+  TextoContainerStyled,
+  TituloCardStyled,
+} from "./CarritoStyles";
 
-const ModalCardCarrito = ({cardImg, title, price, cantidad, id}) => {
+import Modal from "../../UI/Modals/Modal";
 
-    const dispatch = useDispatch()
-  
-    return (
+const ModalCardCarrito = ({ cardImg, title, price, cantidad, id }) => {
+  const dispatch = useDispatch();
+  const [showConfirmationModal, setShowConfirmationModal] = useState(false);
 
-      <ContainerProductosStyled>
+  const handleDecreaseCantidad = () => {
+    
+    if (cantidad === 1) {
 
-        <img
-          src={cardImg}
-          alt={title}
-        />
+      setShowConfirmationModal(true);
 
-        <TextoContainerStyled>
+    } else {
+      dispatch(removerProducto(id));
 
-          <TituloCardStyled>{title}</TituloCardStyled>
-          <PrecioStyled>{price}</PrecioStyled>
+    }
 
-        </TextoContainerStyled>
-
-        <ContainerCantidadStyled>
-
-          <Increase
-            onClick={() => dispatch(removerProducto(id))}
-          >
-            {
-              cantidad === 1 ? <GoTrash /> : <LiaMinusSquareSolid />
-            }
-            
-          </Increase>
-
-          <Counter>{cantidad}</Counter>
-
-          <Increase onClick={() => dispatch(agregarProducto({cardImg, title, price, cantidad, id}))}>
-            <LiaPlusSquareSolid />
-          </Increase>
-
-        </ContainerCantidadStyled>
-
-      </ContainerProductosStyled>
-    );
   };
-  
-  export default ModalCardCarrito;
+
+  const handleDeleteConfirmation = () => {
+    dispatch(removerProducto(id));
+  };
+
+
+  return (
+    <ContainerProductosStyled>
+      <img src={cardImg} alt={title} />
+
+      <TextoContainerStyled>
+        <TituloCardStyled>{title}</TituloCardStyled>
+        <PrecioStyled>{price}</PrecioStyled>
+      </TextoContainerStyled>
+
+      <ContainerCantidadStyled>
+        <Increase onClick={handleDecreaseCantidad}>
+          {cantidad === 1 ? <GoTrash /> : <LiaMinusSquareSolid />}
+        </Increase>
+
+        <Counter>{cantidad}</Counter>
+
+        <Increase
+          onClick={() =>
+            dispatch(agregarProducto({ cardImg, title, price, cantidad, id }))
+          }
+        >
+          <LiaPlusSquareSolid />
+        </Increase>
+      </ContainerCantidadStyled>
+
+      {/* Modal de confirmación */}
+
+      <Modal
+        isOpen={showConfirmationModal}
+        message={"¿Desea eliminar este producto del carrito?"}
+        onYesClick={handleDeleteConfirmation}
+        onNoClick={() => setShowConfirmationModal(false)}
+      />
+      
+    </ContainerProductosStyled>
+  );
+};
+
+export default ModalCardCarrito;

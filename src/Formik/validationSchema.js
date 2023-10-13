@@ -21,10 +21,10 @@ export const checkoutValidationSchema = Yup.object({
 export const registroValidationSchema = Yup.object({
     name: Yup.string().required('Campo Requerido'),
     email: Yup.string().email('El email no es valido').required('Campo Requerido'),
-    password: Yup.string().min(6, 'Mínimo de caracteres: 6').required('Campo Requerido')
+    password: Yup.string().min(8, 'Mínimo de caracteres: 8').required('Campo Requerido')
 })
 
 export const loginValidationSchema = Yup.object({
     email: Yup.string().email('El email no es valido').required('Campo Requerido'),
-    password: Yup.string().min(6, 'Mínimo de caracteres: 6').required('Campo Requerido')
+    password: Yup.string().min(8, 'Mínimo de caracteres: 8').required('Campo Requerido')
 })

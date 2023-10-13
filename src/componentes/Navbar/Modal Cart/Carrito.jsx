@@ -1,134 +1,158 @@
-import React from 'react'
-import Button from '../../Button/Button'
-import { CarritoWrapperStyled, CloseButtonStyled, ContainerBotonesStyled, ContainerCloseButtonStyled, ContainerPrecioStyled, ContainerPrincipalStyled, OverlayStyled, ProductosWrapperStyled, TituloCarritoStyled, TotalStyled  } from './CarritoStyles'
+import React, { useState } from "react";
+import Button from "../../Button/Button";
+import { VaciarCarritoButton } from "../../Button/ButtonStyles";
+import {
+  CarritoWrapperStyled,
+  CloseButtonStyled,
+  ContainerBotonesStyled,
+  ContainerCloseButtonStyled,
+  ContainerPrecioStyled,
+  ContainerPrincipalStyled,
+  OverlayStyled,
+  ProductosWrapperStyled,
+  TituloCarritoStyled,
+  TotalStyled,
+} from "./CarritoStyles";
 import { GoTrash } from "react-icons/go";
-import { RxCrossCircled } from "react-icons/rx"
+import { RxCrossCircled } from "react-icons/rx";
 
-import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux';
-import { cleanCart, toggleHiddenCart } from '../../../redux/cart/cartSlice';
-import { openConfirmationModal, closeConfirmationModal } from "../../../redux/modal/modalSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { cleanCart, toggleHiddenCart } from "../../../redux/cart/cartSlice";
 
+import ModalCardCarrito from "./ModalCardCarrito";
 
-import ConfirmationModal from "./ConfirmationModal"
-import ModalCardCarrito from './ModalCardCarrito';
-
-
+import { AnimatePresence } from "framer-motion";
+import Modal from "../../UI/Modals/Modal";
 
 const Carrito = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
-  const hiddenCart = useSelector((state) => state.cart.hidden);
-  const isConfirmationModalOpen = useSelector((state) => state.modal.isConfirmationModalOpen)
 
+  const hiddenCart = useSelector((state) => state.cart.hidden);
+  const { isOpen, setMessage } = useSelector((state) => state.modal);
   const { itemsCarrito, costoEnvio } = useSelector((state) => state.cart);
 
   const precioTotal = itemsCarrito.reduce((acumulador, item) => {
-    return (acumulador += item.price * item.cantidad)
+    return (acumulador += item.price * item.cantidad);
   }, 0);
 
- 
-  const openCart = () => {
+  const [showEmptyConfirmationModal, setShowEmptyConfirmationModal] =
+    useState(false);
+  const [showSuccedConfirmationModal, setShowSuccedConfirmationModal] =
+    useState(false);
+
+  //CONFIRMATION MODAL VACIAR CARRITO
+  const handleCloseModal = () => {
+    dispatch(cleanCart());
+    setShowEmptyConfirmationModal(false);
     dispatch(toggleHiddenCart())
   };
 
-  // Función para abrir el modal de confirmación
-  const openConfirmation = () => {
-    dispatch(openConfirmationModal());
-  };
-
-  // Función para cerrar el modal de confirmación
-  const closeConfirmation = () => {
-    dispatch(closeConfirmationModal());
-  };
-
-  // Función para vaciar el carrito (llamada cuando se confirma en el modal)
+  // VACIAR CARRITO
   const handleVaciarCarrito = () => {
-    dispatch(cleanCart());
-    closeConfirmation(); // Cierra el modal de confirmación después de vaciar el carrito
+    setShowEmptyConfirmationModal(true);
   };
+
+  //CONFIRMATION MODAL FINALIZAR COMPRA
+  const handleModalFinalizarCompra = () => {
+    setShowSuccedConfirmationModal(true);
+  };
+
+  //FINALIZAR COMPRA
+  const finalizarCompra = () => {
+    dispatch(cleanCart());
+    dispatch(toggleHiddenCart())
+  }
 
   return (
-
     <>
-      <CarritoWrapperStyled style={{ display: hiddenCart ? 'none' : 'flex' }}>
+      <>
+        {!hiddenCart && (
+          <OverlayStyled onClick={() => dispatch(toggleHiddenCart())} />
+        )}
 
-        <ContainerCloseButtonStyled>
-
-          <TituloCarritoStyled>
-            <h2>Mi Carrito</h2>
-
-            <CloseButtonStyled
-              // onClick={() => dispatch(toggleHiddenCart())} 
-              onClick={openCart}
+        <AnimatePresence>
+          {!hiddenCart && (
+            <CarritoWrapperStyled
+              initial={{ translateX: 600 }}
+              animate={{ translateX: 0 }}
+              exit={{ translateX: 600 }}
+              transition={{ type: "spring", damping: 27 }}
+              key="cart-modal"
             >
-              <RxCrossCircled size="24px"/>
+              <ContainerCloseButtonStyled>
+                <TituloCarritoStyled>
+                  <h2>Mi Carrito</h2>
 
-            </CloseButtonStyled>
+                  <CloseButtonStyled
+                    onClick={() => dispatch(toggleHiddenCart())}
+                  >
+                    <RxCrossCircled size="24px" />
+                  </CloseButtonStyled>
+                </TituloCarritoStyled>
+              </ContainerCloseButtonStyled>
 
-          </TituloCarritoStyled>
+              <ContainerPrincipalStyled>
+                <ProductosWrapperStyled>
+                  {itemsCarrito.length ? (
+                    itemsCarrito.map((item) => {
+                      return <ModalCardCarrito key={item.id} {...item} />;
+                    })
+                  ) : (
+                    <p>No hay productos en tu carrito de compras</p>
+                  )}
+                </ProductosWrapperStyled>
+              </ContainerPrincipalStyled>
 
-        </ContainerCloseButtonStyled>
+              <ContainerPrecioStyled>
+                <TotalStyled>
+                  <p>SUBTOTAL: $ {precioTotal} </p>
+                  <p>ENVIO: $ {costoEnvio} </p>
+                  <span />
+                  <p>TOTAL: $ {precioTotal + costoEnvio}</p>
+                </TotalStyled>
+              </ContainerPrecioStyled>
 
-        <ContainerPrincipalStyled>
- 
-          <ProductosWrapperStyled>
+              <ContainerBotonesStyled>
+                <Button
+                  onClick={() => handleModalFinalizarCompra()}
+                  disabled={!itemsCarrito.length}
+                >
+                  FINALIZAR PEDIDO
+                </Button>
 
-            {itemsCarrito.length ? (
-              itemsCarrito.map((item) => {
-                return <ModalCardCarrito key={item.id} {...item} />;
-              })
-            ) : (
-              <p>No hay productos en tu carrito de compras.</p>
-            )}
-          </ProductosWrapperStyled>
+                <VaciarCarritoButton
+                  onClick={() => handleVaciarCarrito()}
+                  disabled={!itemsCarrito.length}
+                >
+                  <GoTrash size={18} />
+                  VACIAR CARRITO
+                </VaciarCarritoButton>
+              </ContainerBotonesStyled>
+            </CarritoWrapperStyled>
+          )}
+        </AnimatePresence>
+      </>
 
-        </ContainerPrincipalStyled>
+      {/*  MODAL CONFIRMACION VACIAR CARRITO */}
 
-        <ContainerPrecioStyled>
+      <Modal
+        isOpen={showEmptyConfirmationModal}
+        message={"¿Está seguro que desea vaciar el carrito?"}
+        onYesClick={handleCloseModal}
+        onNoClick={() => setShowEmptyConfirmationModal(false)}
+      />
 
-          <TotalStyled>
-
-            <p>Subtotal: $ { precioTotal } </p>
-            <p>Envio: $ { costoEnvio } </p>
-            <span/>
-            <p>Total: $ { precioTotal + costoEnvio }</p>
-      
-          </TotalStyled>
-
-        </ContainerPrecioStyled>
-
-        <ContainerBotonesStyled>
-
-          <Button
-            // onClick={openConfirmation}
-            disabled={!itemsCarrito.length}
-            >
-            FINALIZAR PEDIDO</Button>
-          
-          <Button 
-            onClick={openConfirmation}
-            disabled={!itemsCarrito.length}
-            > 
-            <GoTrash size={18} />
-            VACIAR CARRITO
-          </Button>
-
-        </ContainerBotonesStyled>
-
-      </CarritoWrapperStyled>
-
-      {/* MODAL DE CONFIRMACION */}
-      
-      <ConfirmationModal
-        isOpen={isConfirmationModalOpen}
-        confirmHandler={handleVaciarCarrito}
-        cancelHandler={closeConfirmation}      
+      <Modal
+        isOpen={showSuccedConfirmationModal}
+        message={"Gracias por su compra!"}
+        onCloseClick={() => {
+          setShowSuccedConfirmationModal(false);
+          finalizarCompra(); 
+        }}
       />
 
     </>
-  ) 
-}
+  );
+};
 
-export default Carrito
-
+export default Carrito;

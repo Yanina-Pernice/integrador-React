@@ -10,7 +10,11 @@ export const ProductosWrapper = styled.section`
     margin: 3rem;
     h2{
         text-align: center;
-        color: #af3264;
+        //color: #af3264;
+        background: linear-gradient(95deg, #af3264, #ff4a92);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
     @media (max-width: 768px) {
         text-align: center;
@@ -85,7 +89,7 @@ export const ButtonContainerStyled = styled.div`
     color: #af3264;
 `;
 
-//MODAL
+//MODAL CONTACTO Y CARD PRODUCTO
 
 export const ModalContainer = styled.div`
     position: fixed;
@@ -94,24 +98,26 @@ export const ModalContainer = styled.div`
     background-color: #eaf6f6; 
     padding: 9px;
     border: 1px solid #ccc;
-    height: 4rem;
     border-radius: 5px;
 
     @media (min-width: 320px) {
-        left: 50px;
+        left: 15px;
+        max-width: 80%;
     }
 `
 
 export const ModalContent = styled.div`
-    height: 4rem;
     display: flex;
     flex-direction: column;
-    
+    text-align: center;
+        
     & p {
         color: #0881a3;
         font-size: 14px;
-        font-weight: 500;
+        font-weight: 700;
         padding: 0 10px;
+        max-width: 90%;
+        margin: 0 auto;
     }
 
 

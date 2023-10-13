@@ -8,7 +8,11 @@ export const BeneficiosWrapper = styled.section`
     margin-top: 3rem;
     h2{
         text-align: center;
-        color: #af3264;
+        //color: #af3264;
+        background: linear-gradient(95deg, #af3264, #ff4a92);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
     @media (max-width: 768px) {
         padding-top: 30px;

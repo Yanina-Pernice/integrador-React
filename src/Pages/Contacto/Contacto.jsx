@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { ContactoContainer, FormContacto } from './ContactoStyles'
 
 import Input from '../../componentes/FormUI/input/Input'
@@ -8,8 +8,30 @@ import TextArea from '../../componentes/FormUI/textArea/TextAreaInput'
 import { Formik } from 'formik'
 import { contactoValidationSchema } from '../../Formik/validationSchema'
 import { contactoInitialValues } from '../../Formik/initialValues'
+import { toggleModal } from '../../redux/modal/modalSlice'
+import { useDispatch, useSelector } from 'react-redux'
+
+import { ModalContainer, ModalContent } from '../Home/Productos Destacados/CardsProductosStyles'
 
 const Contacto = () => {
+
+  const dispatch = useDispatch();
+  const { isOpen } = useSelector((state) => state.modal)
+
+  const handleSubmitSuccess = () => {
+    dispatch(toggleModal())
+  };
+
+  let timeOutModal;
+
+  useEffect(() => {
+    if (isOpen) {
+      timeOutModal = setTimeout(() => {
+        dispatch(toggleModal())
+      }, 2000);
+    }
+    return () => clearTimeout(timeOutModal)
+  }, [isOpen, dispatch])
 
   return (
 
@@ -21,6 +43,8 @@ const Contacto = () => {
         validationSchema={contactoValidationSchema}
         onSubmit={ (values, {resetForm}) => {
           resetForm();
+          handleSubmitSuccess();       
+          
         }}
       >
 
@@ -73,10 +97,18 @@ const Contacto = () => {
 
           </FormContacto>)
         }
-
         
       </Formik>
-     
+
+      {/* MODAL */}
+      {isOpen && (
+        <ModalContainer>
+          <ModalContent>            
+            <p>¡Formulario enviado exitosamente!</p>
+          </ModalContent>
+        </ModalContainer>
+        )
+      }
 
     </ContactoContainer>  
 

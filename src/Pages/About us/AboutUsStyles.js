@@ -27,7 +27,11 @@ export const AboutUsTextContainerStyled = styled.div`
     margin-bottom: 2rem;
  
     h2{
-        color: #131415;
+        //color: #131415;
+        background: linear-gradient(95deg, #af3264, #ff4a92);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         text-shadow: 4px 4px 2px rgba(187,171,139,0.25);
 
     }
@@ -39,7 +43,10 @@ export const AboutUsTextContainerStyled = styled.div`
 
     span{
         font-weight: bolder;
-        color: #af3264;
+        background: linear-gradient(95deg, #af3264, #ff4a92);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
 
     }
 

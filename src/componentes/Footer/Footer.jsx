@@ -35,9 +35,12 @@ const Footer = () => {
         
       </LinkFooterContainerStyled>
 
-      <p>Copyright GLOW UP ACCESORIOS-2023. Todos los derechos reservados.</p>
-      <p>Defensa del consumidor. Para reclamos ingrese <span>aquí.</span></p>
-      <p>creado por <span>YP</span></p>
+      <div className='footer_text'>
+        <p>Copyright GLOW UP ACCESORIOS-2023. Todos los derechos reservados.</p>
+        <p>Defensa del consumidor. Para reclamos ingrese <span>aquí.</span></p>
+        <p>creado por <span>YP</span></p>
+      </div>
+      
 
     </FooterContainerStyled>
   )

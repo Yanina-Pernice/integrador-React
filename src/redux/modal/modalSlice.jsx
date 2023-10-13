@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const INITIAL_STATE = {
-    isOpen: false, //AL AGREGAR ITEM
-    isConfirmationModalOpen: false, //PARA VACIAR CARRITO
+    isOpen: false, 
+    message: ''
 
 }
 
@@ -10,20 +10,22 @@ const modalSlice = createSlice({
     name: "modal",
     initialState: INITIAL_STATE,
     reducers: {
-        openModal: (state) => {
-            state.isOpen = true;
+        toggleModal: (state) => {
+            return {
+                ...state,
+                isOpen: !state.isOpen,  
+            }
+          
         },
-        closeModal: (state) => {
-            state.isOpen = false;
-        },
-        openConfirmationModal: (state) => {
-            state.isConfirmationModalOpen = true;
-        },
-        closeConfirmationModal: (state) => {
-            state.isConfirmationModalOpen = false;
+
+        setMessage: (state, action) => {
+            return{
+                ...state,
+                message: action.payload
+            }
         },
     }
 });
 
-export const { openModal, closeModal, openConfirmationModal, closeConfirmationModal  } = modalSlice.actions;
+export const { toggleModal, setMessage  } = modalSlice.actions;
 export default modalSlice.reducer; 

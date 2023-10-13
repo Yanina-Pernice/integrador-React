@@ -1,11 +1,9 @@
 import CardProducto from "../../Pages/Home/Productos Destacados/CardProducto";
 import Categorias from "./Categorias/Categorias";
 import { ButtonContainerStyled, ProductosWrapper, ProductosContainer } from "../Home/Productos Destacados/CardsProductosStyles";
-import Button from '../../componentes/Button/Button';
 
 import { useSelector } from "react-redux";
 import React, { useEffect, useState } from "react";
-import { INITIAL_LIMIT } from "../../utils/constantes";
 
 const ListaDeProductos = () => {
   // DESPLAZAMIENTO SUAVE
@@ -16,9 +14,7 @@ const ListaDeProductos = () => {
   const totalProducts = useSelector((state) => state.productos.totalProductos);
   const categoriaSeleccionada = useSelector((state) => state.categorias.categoriaSeleccionada);
 
-  const [limite, setLimite] = useState(INITIAL_LIMIT); 
-
-  // FILTRADO DE PRODUCTOS POR CATEGORIA 
+   // FILTRADO DE PRODUCTOS POR CATEGORIA 
   const productos = useSelector((state) => 
     categoriaSeleccionada
       ? state.productos.productos.filter((producto) => producto.category === categoriaSeleccionada)      
@@ -43,23 +39,6 @@ const ListaDeProductos = () => {
         )}
       </ProductosContainer>
 
-      {!categoriaSeleccionada && (
-        <ButtonContainerStyled>
-          <Button
-            onClick= {() => setLimite((prevLimite) => prevLimite - INITIAL_LIMIT)}
-            disabled={INITIAL_LIMIT === limite}
-          >
-            Ver menos
-          </Button>
-
-          <Button
-            onClick={() => setLimite((prevLimite) => prevLimite + INITIAL_LIMIT)}
-            disabled={ totalProducts <= limite }
-          >
-            Ver más
-          </Button>
-        </ButtonContainerStyled>
-      )}
     </ProductosWrapper>
   );
 };

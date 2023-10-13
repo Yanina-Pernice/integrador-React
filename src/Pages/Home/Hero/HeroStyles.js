@@ -17,6 +17,10 @@ export const HeroContainerStyled = styled.section`
 
     h1 {
         margin-bottom: 2rem;
+        background: linear-gradient(95deg, #af3264, #ff4a92);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
 
     }
 
@@ -46,8 +50,12 @@ export const HeroTextContainerStyled = styled.div`
     }
     p{
         font-size: 1.2rem;
-        color: #af3264;
-        font-weight: bolder;
+        //color: #af3264;
+        background: linear-gradient(95deg, #af3264, #ff4a92);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 500;
         text-shadow: 4px 4px 9px rgba(255,255,255,0.6);
     }
     @media (max-width: 1000px){

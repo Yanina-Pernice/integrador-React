@@ -9,8 +9,6 @@ export const StyledButton = styled(motion.button)`
     border-radius: ${({ radius }) => `${radius}px`};
     background: rgb(233,204,204);
     background: linear-gradient(90deg, rgba(233,204,204,1) 25%, rgba(255,221,210,1) 81%);
-
-
     color: #af3264;
     font-weight: 400;
     cursor: pointer;    
@@ -29,8 +27,17 @@ export const StyledButton = styled(motion.button)`
     }
 
     @media (min-width: 320px) {
-        padding: 0.25rem 1.25rem;
+        //padding: 0.25rem 1.25rem;
 
     }
+    
 
+`
+
+export const VaciarCarritoButton = styled(StyledButton)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px; 
+  border-radius: 10px;
 `
