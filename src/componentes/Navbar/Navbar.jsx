@@ -41,7 +41,7 @@ const Navbar = () => {
   const handleToggleMenu = () => {
     dispatch(toggleMenu());
   }
-  
+
   return (
     <NavbarWrapper>
 
@@ -65,9 +65,9 @@ const Navbar = () => {
           exit={{ x: 0 }}
         >
           <PagesWrapper className={isMenuOpen ? "open" : ""}>
-            <Link to="/about-us">NOSOTROS</Link>
-            <Link to="/productos">PRODUCTOS</Link>
-            <Link to="/contacto">CONTACTO</Link>
+            <Link to="/about-us" onClick={() => handleToggleMenu()}>NOSOTROS</Link>
+            <Link to="/productos" onClick={() => handleToggleMenu()}>PRODUCTOS</Link>
+            <Link to="/contacto" onClick={() => handleToggleMenu()}>CONTACTO</Link>
           </PagesWrapper>
 
         </motion.div>

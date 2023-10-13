@@ -228,6 +228,5 @@ export const OverlayStyled = styled(motion.div)`
   width: 100%;
   background: rgba(0, 0, 0, 0.5); // Fondo semitransparente
   backdrop-filter: blur(5px); 
-  pointer-events: none;
 
 `;
